@@ -72,3 +72,22 @@ for key in dic: ...
 
 del, len()
 
+
+
+
+函数调用
+
+先位置(tuple)，再包裹位置(*tuple)，再关键字(dict)，再包裹关键字(**dict)
+
+def func(a=0,b=0,c=0,d=0,e=0,f=0,g=0):
+    print (a,b,c,d,e,f,g)
+args = (4,5)#b,c赋值
+args1={'e':6,'d':7}#d,e赋值
+func(1,*args,g=2,f=3,**args1)
+ 
+#输出
+1 4 5 7 6 3 2
+
+func(1,*args,g=2,f=3,*args1)
+#输出
+1 4 5 e d 3 2
